@@ -9,6 +9,10 @@ function [expDes]=designConfig(const)
 % Output(s):
 % expDes is the design object
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Experimental variables
 

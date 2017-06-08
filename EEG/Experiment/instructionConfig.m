@@ -10,6 +10,10 @@ function [textExp,button] = instructionConfig(const)
 % textExp : struct containing all text of general instructions.
 % button : struct containing all button instructions.
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Pause:
 pause_l1 = 'Pausa.';

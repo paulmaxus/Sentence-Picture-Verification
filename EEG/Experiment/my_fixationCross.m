@@ -2,6 +2,10 @@ function my_fixationCross(scr,const)
 % ----------------------------------------------------------------------
 % draws fixation cross
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 x = scr.x_mid;
 y = const.fixpos;

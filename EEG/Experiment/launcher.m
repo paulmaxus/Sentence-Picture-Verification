@@ -1,4 +1,8 @@
-%-------------------------- launches the experiment ----------------------------
+%-------------------------- launches the experiment ----------------------------------
+% Created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ------------------------------------------------------------------------------------
 
 %TODO this is for debug
 Screen('Preference', 'SkipSyncTests', 1);
@@ -17,7 +21,7 @@ if( cogent.io.status ~= 0 )
 end
 % define parallel port address
 const.address = hex2dec('DFF8');
-% Set parallel port to 0 
+% Set parallel port to 0
 outp(const.address, 0);
 %-------------------------------------------------------------------------------------
 

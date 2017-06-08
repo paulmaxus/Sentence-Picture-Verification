@@ -2,6 +2,10 @@ function [scr]=scrConfig(const)
 % ----------------------------------------------------------------------
 % defines screen properties in scr
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 % Number of the experimental screen:
 scr.all = Screen('Screens');

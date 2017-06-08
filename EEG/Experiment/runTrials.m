@@ -9,6 +9,10 @@ function runTrials(scr,const,expDes,my_key,textExp,button)
 % Output(s):
 % none
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Create the result matrix
 expResMat = zeros(expDes.nb_trials, (expDes.nb_var + 12)); % + sentence code, picture code, response code, button, RT, age, gender,

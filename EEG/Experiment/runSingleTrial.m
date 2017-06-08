@@ -2,6 +2,10 @@ function [resMat,relpos,altpos] = runSingleTrial(scr, const, expDes, my_key, t)
 % ----------------------------------------------------------------------
 % runs a single trial and outputs the results in resMat (key, RT)
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Retrieve trigger codes for this trial
 data_outS = expDes.expMat(t,9);
@@ -65,25 +69,25 @@ sentence = cellstr(sentence);
 
 % Display words, one at a time
 for i = 1:wordn
-    
+
     % ISI: skip before the first word
-    if i ~= 1 
+    if i ~= 1
         for frame = 1:const.numFrm_tisi
             Screen('FillRect', scr.main, const.colBG);
             my_fixationCross(scr,const);
             Screen('Flip', scr.main);
         end
     end
-    
+
     % Prepare word
     Screen('FillRect', scr.main, const.colBG);
     my_fixationCross(scr,const);
     Screen ('TextFont', scr.main, const.textfont);
-    Screen('TextSize', scr.main, const.textsize);    
+    Screen('TextSize', scr.main, const.textsize);
     DrawFormattedText(scr.main, char(sentence(i)), 'center', scr.y_mid - 60, const.colorT);
-    
+
     wordOnset = 0;
-    
+
     % Display
     if i == 1
     % Sentence onset: send trigger to parallel port (code = 1), then reset the port
@@ -91,7 +95,7 @@ for i = 1:wordn
         outp(const.address, 1);
         WaitSecs(0.01);
         outp(const.address, 0);
-    elseif i == wordn 
+    elseif i == wordn
     % Onset of final word
         wordOnset = Screen('Flip', scr.main);
         outp(const.address, data_outS);
@@ -99,14 +103,14 @@ for i = 1:wordn
         outp(const.address, 0);
     else
     % No trigger for inner words
-        wordOnset = Screen('Flip', scr.main);    
+        wordOnset = Screen('Flip', scr.main);
     end
-    
+
     elapsed = GetSecs-wordOnset;
     while elapsed < const.tword
         elapsed = GetSecs-wordOnset;
     end
-    
+
 end
 
 %% Display fixation cross for the delay time, then picture (build picture during delay)
@@ -139,7 +143,7 @@ outp(const.address, 0);
 % save image of the picture
 %img = Screen('GetImage', scr.main);
 %imwrite(img, 'pic.jpg');
-              
+
 elapsed = GetSecs-picOnset;
 while elapsed < const.tpic
     elapsed = GetSecs-picOnset;
@@ -151,23 +155,23 @@ tRT = tRT - picOnset;
 
 % In case of timeout show warning
 if key_press.timeout == 1
-    
+
     resMat = [2, tRT]; % timeout variable is 2
     % Show warning
     Screen('FillRect', scr.main, const.colBG);
     my_fixationCross(scr,const);
     Screen ('TextFont', scr.main, const.textfont);
-    Screen('TextSize', scr.main, const.textsize);    
+    Screen('TextSize', scr.main, const.textsize);
     DrawFormattedText(scr.main, 'PIU VELOCE', 'center', scr.y_mid - 60, [220 10 10]);
     warnT = Screen('Flip', scr.main);
-    
+
     % Display warning for 1 second
     elapsedW = GetSecs - warnT;
     while elapsedW < 1
         elapsedW = GetSecs - warnT;
     end
-    
-% Otherwise save respective answer (corrisponding or not-corrisponding)     
+
+% Otherwise save respective answer (corrisponding or not-corrisponding)
 else
     if const.sjct_blockseq == 0
         % up is matching sentence-picture: value 1
@@ -184,7 +188,7 @@ else
             resMat = [1, tRT];
         end
     end
-    
+
     % Construct response code
     if resMat(1) == 0 && expDes.expMat(t,2) == 0
         rcode = 201;
@@ -195,11 +199,11 @@ else
     elseif resMat(1) == 1 && expDes.expMat(t,2) == 1
         rcode = 204;
     end
-    
+
     % Send response trigger
     outp(const.address, rcode);
     WaitSecs(0.01);
     outp(const.address, 0);
-    
+
 end
 end

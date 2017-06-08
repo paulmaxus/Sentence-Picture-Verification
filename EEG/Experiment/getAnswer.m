@@ -2,6 +2,10 @@ function [key_press,tRt]=getAnswer(scr,const,my_key,picOnset)
 % ----------------------------------------------------------------------
 % collects the answer (button-press)
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 key_press.up = 0;
 key_press.down = 0;
@@ -40,7 +44,7 @@ while elapsed < 4
         elapsed = GetSecs - picOnset;
 
 end
-    
+
 % Timeout
 
 key_press.timeout = 1;

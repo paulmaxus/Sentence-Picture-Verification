@@ -2,6 +2,10 @@ function main(const)
 % ----------------------------------------------------------------------
 % main experimental function triggered by the launcher
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Configuration
 

@@ -9,6 +9,10 @@ function [my_key]=keyConfig
 % Output(s):
 % my_key contains fields for key assignments
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 % clears any previous button press
 FlushEvents('KeyDown');
