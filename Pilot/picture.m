@@ -2,6 +2,10 @@ function [relpos, altpos]=picture(scr, const, expDes, t)
 % ---------------------------------------------------------------------------------
 % Creates the picture which is then displayed afterwards
 % ---------------------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %% Check variables to define shape, color and position
 
@@ -16,7 +20,7 @@ if expDes.expMat(t,4) == 0
         altObj = 2;
     end
 elseif expDes.expMat(t,4) == 1
-    relObj = 1;  
+    relObj = 1;
     if expDes.expMat(t,7) == 0
         altObj = 0;
     else
@@ -30,7 +34,7 @@ else
         altObj = 1;
     end
 end
-    
+
 %% Color
 % is determined by the matching condition
 % for FA and TN, the mentioned object does not have the mentioned color
@@ -67,11 +71,11 @@ end
 
 % Draw relevant objects
 r = randi([1 3],1,3);
-relpos = r; 
+relpos = r;
 
  if relPos == 0 % relevant object left
     switch relObj
-        case 0 
+        case 0
             Screen('FillOval', scr.main, colRel, [const.xl(1) - const.c, const.y(r(1)) - const.c, const.xl(1) + const.c, const.y(r(1)) + const.c]);
             Screen('FillOval', scr.main, colRel, [const.xl(2) - const.c, const.y(r(2)) - const.c, const.xl(2) + const.c, const.y(r(2)) + const.c]);
             Screen('FillOval', scr.main, colRel, [const.xl(3) - const.c, const.y(r(3)) - const.c, const.xl(3) + const.c, const.y(r(3)) + const.c]);
@@ -84,9 +88,9 @@ relpos = r;
             Screen('FillPoly', scr.main, colRel, [const.xl(2) - const.tx, const.y(r(2)) + const.ty; const.xl(2), const.y(r(2)) - const.ty; const.xl(2) + const.tx, const.y(r(2)) + const.ty]);
             Screen('FillPoly', scr.main, colRel, [const.xl(3) - const.tx, const.y(r(3)) + const.ty; const.xl(3), const.y(r(3)) - const.ty; const.xl(3) + const.tx, const.y(r(3)) + const.ty]);
     end
- else % relevant object right 
+ else % relevant object right
      switch relObj
-        case 0 
+        case 0
             Screen('FillOval', scr.main, colRel, [const.xr(1) - const.c, const.y(r(1)) - const.c, const.xr(1) + const.c, const.y(r(1)) + const.c]);
             Screen('FillOval', scr.main, colRel, [const.xr(2) - const.c, const.y(r(2)) - const.c, const.xr(2) + const.c, const.y(r(2)) + const.c]);
             Screen('FillOval', scr.main, colRel, [const.xr(3) - const.c, const.y(r(3)) - const.c, const.xr(3) + const.c, const.y(r(3)) + const.c]);
@@ -104,10 +108,10 @@ relpos = r;
  % Draw alternative objects
  r = randi([1 3],1,3);
  altpos = r;
- 
+
  if altPos == 0 % relevant object left
     switch altObj
-        case 0 
+        case 0
             Screen('FillOval', scr.main, colAlt, [const.xl(1) - const.c, const.y(r(1)) - const.c, const.xl(1) + const.c, const.y(r(1)) + const.c]);
             Screen('FillOval', scr.main, colAlt, [const.xl(2) - const.c, const.y(r(2)) - const.c, const.xl(2) + const.c, const.y(r(2)) + const.c]);
             Screen('FillOval', scr.main, colAlt, [const.xl(3) - const.c, const.y(r(3)) - const.c, const.xl(3) + const.c, const.y(r(3)) + const.c]);
@@ -120,9 +124,9 @@ relpos = r;
             Screen('FillPoly', scr.main, colAlt, [const.xl(2) - const.tx, const.y(r(2)) + const.ty; const.xl(2), const.y(r(2)) - const.ty; const.xl(2) + const.tx, const.y(r(2)) + const.ty]);
             Screen('FillPoly', scr.main, colAlt, [const.xl(3) - const.tx, const.y(r(3)) + const.ty; const.xl(3), const.y(r(3)) - const.ty; const.xl(3) + const.tx, const.y(r(3)) + const.ty]);
     end
- else % relevant object right 
+ else % relevant object right
      switch altObj
-        case 0 
+        case 0
             Screen('FillOval', scr.main, colAlt, [const.xr(1) - const.c, const.y(r(1)) - const.c, const.xr(1) + const.c, const.y(r(1)) + const.c]);
             Screen('FillOval', scr.main, colAlt, [const.xr(2) - const.c, const.y(r(2)) - const.c, const.xr(2) + const.c, const.y(r(2)) + const.c]);
             Screen('FillOval', scr.main, colAlt, [const.xr(3) - const.c, const.y(r(3)) - const.c, const.xr(3) + const.c, const.y(r(3)) + const.c]);

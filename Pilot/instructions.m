@@ -11,6 +11,10 @@ function instructions(scr,const,my_key,text,button)
 % Output(s):
 % (none)
 % ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 while KbCheck; end
 KbName('UnifyKeyNames');

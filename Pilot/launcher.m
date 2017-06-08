@@ -1,4 +1,8 @@
 %-------------------------- launches the experiment ----------------------------
+% Created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
+% ----------------------------------------------------------------------
 
 %TODO this is for debug
 Screen('Preference', 'SkipSyncTests', 1);

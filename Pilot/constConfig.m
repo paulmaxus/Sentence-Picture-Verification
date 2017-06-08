@@ -1,6 +1,10 @@
-    function [const] = constConfig(scr, const)
+function [const] = constConfig(scr, const)
 % ----------------------------------------------------------------------
 % Defines constant properties
+% ----------------------------------------------------------------------
+% Function created by Martin SZINTE (martin.szinte@gmail.com)
+% Project : Yeshurun98
+% Edited by Maximillian Paulus
 % ----------------------------------------------------------------------
 
 % Colors
@@ -17,7 +21,7 @@ const.thicknessFP_Y = 5;
 
 % Dimensions of objects
 const.c = 40; % px radius
-const.rx = 40;   
+const.rx = 40;
 const.ry = 30;
 const.tx = 50;
 const.ty = 40;
@@ -42,7 +46,7 @@ const.breakafter = 8;
 
 const.tblank = 1.500; % ITI (inter-trial interval)
 const.numFrm_tblank = round(const.tblank/scr.fd);
- 
+
 const.tword = 0.300; % Single-word display time
 const.numFrm_tword = round(const.tword/scr.fd);
 
